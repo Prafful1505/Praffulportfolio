@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-delay-1 {
+  0%, 100% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes float-delay-2 {
+  0%, 100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes float-delay-3 {
+  0%, 100% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(-13px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delay-1 {
+  animation: float-delay-1 3s ease-in-out infinite 0.5s;
+}
+
+.animate-float-delay-2 {
+  animation: float-delay-2 3s ease-in-out infinite 1s;
+}
+
+.animate-float-delay-3 {
+  animation: float-delay-3 3s ease-in-out infinite 1.5s;
+}
+
+/* Enhanced character head tracking */
+.character-head {
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14b8a6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f766e;
+}
+
+/* Character animation improvements */
+.character-head {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+}
+
+/* Enhanced form focus states */
+input:focus,
+textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(20, 184, 166, 0.2);
+}
+
+/* Button hover effects */
+button:hover,
+a:hover {
+  transform: translateY(-1px);
+}
+
+/* Card hover effects */
+.hover\:scale-105:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+/* Background animations */
+body {
+  background-attachment: fixed;
+}
+
+/* Timeline enhancements */
+.timeline-dot {
+  box-shadow: 0 0 0 8px rgba(20, 184, 166, 0.1);
+}
+
+/* Glassmorphism effect enhancements */
+.backdrop-blur-sm {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Text gradient effects */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: #14b8a6;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #14b8a6;
+  color: white;
+}
