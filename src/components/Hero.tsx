@@ -133,7 +133,7 @@ const Hero: React.FC<HeroProps> = ({ characterRef }) => {
             
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Hi, I'm <span className="text-teal-400 font-semibold">Prafful Agrawal</span>, a passionate Data Analyst with expertise in 
-              machine learning, data analytics, cloud computing (AWS), and full-stack development. I specialize in 
+              machine learning, data analytics, cloud computing (AWS), and front-end development. I specialize in 
               extracting insights from complex datasets, building AI solutions, and creating data-driven applications.
             </p>
             
