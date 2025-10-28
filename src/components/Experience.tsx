@@ -12,9 +12,53 @@ const Experience = () => {
         
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-teal-500 to-blue-500"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 via-teal-500 to-blue-500"></div>
           
           <div className="space-y-16">
+            
+            {/* Latest Experience */}
+            <div className="relative">
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="lg:w-1/2 lg:ml-auto lg:pl-8">
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-2 text-purple-400">
+                        <Calendar size={16} />
+                        <span className="text-sm font-medium">Sep 2025 – Present</span>
+                      </div>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-2">Forward Deployed Engineer</h3>
+                    <p className="text-purple-400 font-medium mb-4">Target Dial</p>
+
+                    <div className="space-y-3 text-gray-300 text-sm">
+                      <div className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span>
+                          Designed and deployed AI-powered conversational agents using RetellAI and no-code automation tools (N8N, Make.com), improving lead qualification efficiency.
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span>
+                          Engineered scalable workflows integrating multiple APIs and optimized data pipelines for analytics-driven performance monitoring.
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span>
+                          Applied NLP techniques to analyze interaction data, identifying patterns to enhance model accuracy and user experience.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Timeline Dot */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+              </div>
+            </div>
+
             {/* Experience */}
             <div className="relative">
               <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -124,6 +168,7 @@ const Experience = () => {
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-500 rounded-full border-4 border-slate-900 z-10"></div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
