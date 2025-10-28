@@ -150,11 +150,11 @@ const Experience = () => {
                     <div className="space-y-3 text-gray-300 text-sm">
                       <div className="flex items-start gap-2 lg:justify-end lg:text-right">
                         <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 flex-shrink-0 lg:order-2"></div>
-                        <span>Data Analytics with Python, NPTEL Certified (2025)</span>
+                        <span>Oracle Cloud Infrastructure 2025 Foundations Associate - Certified by Oracle</span>
                       </div>
                       <div className="flex items-start gap-2 lg:justify-end lg:text-right">
                         <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 flex-shrink-0 lg:order-2"></div>
-                        <span>LeetCode/GeeksForGeeks: 300+ problems solved, analytical and problem-solving skills</span>
+                        <span>Data Analytics with Python, NPTEL Certified (2025)</span>
                       </div>
                       <div className="flex items-start gap-2 lg:justify-end lg:text-right">
                         <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 flex-shrink-0 lg:order-2"></div>
