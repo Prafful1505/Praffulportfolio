@@ -1,82 +1,48 @@
-import { Award, Briefcase, GraduationCap } from 'lucide-react';
-import SectionHeading from './SectionHeading';
-import { timeline } from '../data/site';
-
-const kindMeta = {
-  work: { Icon: Briefcase, ring: 'from-brand-300 to-brand-600', label: 'Experience' },
-  education: { Icon: GraduationCap, ring: 'from-sky-300 to-blue-600', label: 'Education' },
-  award: { Icon: Award, ring: 'from-amber-300 to-orange-500', label: 'Recognition' },
-} as const;
+import { certifications, roles } from '../data/site';
+import Section from './Section';
 
 const Experience = () => (
-  <section id="experience" className="section">
-    <div className="shell">
-      <SectionHeading
-        eyebrow="The journey so far"
-        title={
-          <>
-            Experience & <span className="text-gradient">education</span>
-          </>
-        }
-        description="Where I've worked, what I studied, and the things I picked up along the way."
-      />
+  <Section id="experience" index="02" title="Where I've worked">
+    <div className="space-y-12">
+      {roles.map((role) => (
+        <article key={role.title} className="reveal grid gap-3 sm:grid-cols-[8rem_1fr] sm:gap-8">
+          <p className="label pt-1.5">{role.period}</p>
 
-      <div className="relative mx-auto max-w-3xl">
-        {/* Rail */}
-        <div className="absolute left-[19px] top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-brand-400/70 via-violet-500/40 to-transparent sm:left-[23px]" />
+          <div>
+            <h3 className="font-display text-xl leading-snug">{role.title}</h3>
+            <p className="mt-0.5 text-sm text-muted">
+              {role.org}
+              {role.note && <span className="text-muted/80"> ({role.note})</span>}
+            </p>
 
-        <div className="space-y-6">
-          {timeline.map((item, index) => {
-            const { Icon, ring, label } = kindMeta[item.kind];
-            return (
-              <div
-                key={item.title}
-                className="reveal relative pl-14 sm:pl-20"
-                style={{ ['--reveal-delay' as string]: `${index * 110}ms` }}
-              >
-                {/* Node */}
-                <div
-                  className={`absolute left-0 top-1 grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br ${ring} text-ink-950 shadow-lg sm:h-12 sm:w-12`}
-                >
-                  <Icon className="h-5 w-5" />
-                </div>
+            <ul className="mt-4 space-y-2.5">
+              {role.points.map((point) => (
+                <li key={point} className="flex gap-3 text-[0.9375rem] leading-relaxed text-ink/80">
+                  <span className="mt-[0.6rem] h-1 w-1 shrink-0 rounded-full bg-accent/70" />
+                  <span className="max-w-measure">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
 
-                <article className="glass glass-hover p-6 sm:p-7">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="chip !text-brand-200">{item.period}</span>
-                    <span className="text-[11px] uppercase tracking-[0.16em] text-slate-500">{label}</span>
-                  </div>
-
-                  <h3 className="mt-4 font-display text-xl font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1 text-sm font-medium text-brand-300">{item.org}</p>
-                  {item.meta && <p className="mt-1 text-sm text-slate-500">{item.meta}</p>}
-
-                  <ul className="mt-5 space-y-3">
-                    {item.points.map((point) => (
-                      <li key={point} className="flex items-start gap-3 text-sm leading-relaxed text-slate-400">
-                        <span className="mt-[0.55rem] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-400/80" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {item.tags && (
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {item.tags.map((tag) => (
-                        <span key={tag} className="chip">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </article>
-              </div>
-            );
-          })}
-        </div>
+      <div className="reveal grid gap-3 border-t border-rule pt-8 sm:grid-cols-[8rem_1fr] sm:gap-8">
+        <p className="label pt-1">Certified</p>
+        <ul className="space-y-2">
+          {certifications.map((cert) => (
+            <li key={cert.name} className="text-[0.9375rem] text-ink/80">
+              {cert.name}
+              <span className="text-muted">
+                {' '}
+                ({cert.issuer}, {cert.year})
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
-  </section>
+  </Section>
 );
 
 export default Experience;

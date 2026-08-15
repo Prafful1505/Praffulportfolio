@@ -1,241 +1,184 @@
 export const profile = {
   name: 'Prafful Agrawal',
   role: 'Implementation Team Manager',
-  tagline: 'I turn messy data into decisions — and AI prototypes into shipped products.',
-  summary:
-    'Implementation Team Manager at Target Dial, leading the delivery of AI agents, data pipelines and analytics that customers use every day. Comfortable across Python, SQL, Power BI, LLM tooling and cloud.',
+  titles: ['Implementation Team Manager', 'Prompt Engineer', 'Forward Deployed Engineer'],
+  company: 'Target Dial',
   location: 'Gwalior, India',
+  timeZone: 'Asia/Kolkata',
   email: 'aprafful15@gmail.com',
   phone: '+91 7879059862',
   phoneHref: 'tel:+917879059862',
-  whatsapp:
-    'https://wa.me/917879059862?text=Hi%20Prafful%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect!',
+  whatsapp: 'https://wa.me/917879059862',
   linkedin: 'https://www.linkedin.com/in/prafful-agrawal-b6b085293/',
   github: 'https://github.com/Prafful1505',
   resume: '/Prafful_Agrawal_Resume.pdf',
-  availability: 'Open to data, AI & delivery opportunities',
 };
 
-export const stats = [
-  { value: '2026', label: 'Promoted to Implementation Team Manager' },
-  { value: '10+', label: 'Data & AI projects shipped' },
-  { value: '85%', label: 'Peak model feedback relevance' },
-  { value: '4+', label: 'Analytics dashboards delivered' },
+export const intro = [
+  'I lead the implementation team at Target Dial. Most of my week goes into working out what a customer actually needs, writing the prompts and building the AI agents and data pipelines behind it, then staying with the work until it runs in production without me watching it.',
+  'Before this I was a forward deployed engineer on the same team, and before that an intern cleaning CRM exports and building Power BI reports. I finish a B.Tech in artificial intelligence and data science at MITS Gwalior in 2026.',
 ];
 
-export const marqueeSkills = [
-  'Python',
-  'SQL',
-  'Power BI',
-  'Pandas',
-  'NumPy',
-  'Machine Learning',
-  'LangChain',
-  'RAG',
-  'AWS',
-  'MySQL',
-  'TypeScript',
-  'n8n',
-  'Whisper',
-  'Statistics',
-  'ETL',
-  'Git',
-];
-
-export type SkillGroup = {
-  title: string;
-  blurb: string;
-  accent: string;
-  skills: string[];
-};
-
-export const skillGroups: SkillGroup[] = [
-  {
-    title: 'Analytics & BI',
-    blurb: 'Turning raw tables into narratives stakeholders act on.',
-    accent: 'from-sky-400 to-blue-600',
-    skills: ['Exploratory Analysis', 'Data Cleaning', 'Power BI & DAX', 'Dashboards', 'Excel Modelling'],
-  },
-  {
-    title: 'Languages & Data',
-    blurb: 'The everyday toolkit for querying, shaping and shipping data.',
-    accent: 'from-emerald-400 to-teal-600',
-    skills: ['Python (Pandas, NumPy)', 'SQL / MySQL', 'TypeScript', 'Java', 'ETL Pipelines'],
-  },
-  {
-    title: 'AI & Machine Learning',
-    blurb: 'From classical models to retrieval-augmented LLM systems.',
-    accent: 'from-fuchsia-400 to-violet-600',
-    skills: ['Machine Learning', 'RAG', 'LangChain', 'OCR / Whisper', 'Statistical Analysis'],
-  },
-  {
-    title: 'Cloud & Automation',
-    blurb: 'Wiring services together so the workflow runs without me.',
-    accent: 'from-amber-400 to-orange-600',
-    skills: ['AWS', 'Oracle Cloud (OCI)', 'n8n / Make.com', 'RetellAI', 'Git & Jupyter'],
-  },
-];
-
-export type TimelineItem = {
-  kind: 'work' | 'education' | 'award';
-  period: string;
-  title: string;
-  org: string;
-  meta?: string;
-  points: string[];
-  tags?: string[];
-};
-
-export const timeline: TimelineItem[] = [
-  {
-    kind: 'work',
-    period: 'Aug 2026 — Present',
-    title: 'Implementation Team Manager',
-    org: 'Target Dial',
-    meta: 'Promoted from Forward Deployed Engineer',
-    points: [
-      'Lead the implementation team end to end — scoping customer requirements, planning delivery and owning the handover into production.',
-      'Set the technical standards for AI agent and automation builds so every deployment is repeatable rather than bespoke.',
-      'Partner with clients and internal stakeholders to translate business goals into measurable analytics and workflow outcomes.',
-    ],
-    tags: ['Team Leadership', 'Solution Design', 'Client Delivery', 'AI Automation'],
-  },
-  {
-    kind: 'work',
-    period: 'Sep 2025 — Aug 2026',
-    title: 'Forward Deployed Engineer',
-    org: 'Target Dial',
-    points: [
-      'Designed and deployed AI-powered conversational agents with RetellAI and no-code automation (n8n, Make.com), improving lead qualification efficiency.',
-      'Engineered scalable workflows integrating multiple APIs and optimised data pipelines for analytics-driven performance monitoring.',
-      'Applied NLP techniques to interaction data, surfacing patterns that improved model accuracy and user experience.',
-    ],
-    tags: ['RetellAI', 'n8n', 'APIs', 'NLP'],
-  },
-  {
-    kind: 'work',
-    period: 'May 2025 — Jul 2025',
-    title: 'Data Scientist Intern',
-    org: 'Young Thames',
-    points: [
-      'Performed in-depth cleaning, aggregation and exploratory analysis of CRM and public datasets to extract actionable insights.',
-      'Automated reporting pipelines and delivered dashboards that supported day-to-day business decisions.',
-      'Partnered with stakeholders on reporting requirements, optimising visualisation in Power BI and Excel.',
-    ],
-    tags: ['Python', 'Power BI', 'Excel', 'CRM Data'],
-  },
-  {
-    kind: 'education',
-    period: '2022 — 2026',
-    title: 'B.Tech, Artificial Intelligence & Data Science',
-    org: 'Madhav Institute of Technology and Science, Gwalior',
-    meta: 'CGPA 7.2 / 10.0',
-    points: ['Coursework spanning the full analytics stack, from statistics through to applied machine learning.'],
-    tags: ['Data Analytics', 'Statistics', 'Data Visualization', 'Database Systems', 'Machine Learning'],
-  },
-  {
-    kind: 'award',
-    period: '2024 — 2025',
-    title: 'Certifications & Leadership',
-    org: 'Oracle · NPTEL · MITS',
-    points: [
-      'Oracle Cloud Infrastructure 2025 Foundations Associate — certified by Oracle.',
-      'Data Analytics with Python — NPTEL certified (2025).',
-      'Management Head, Science Club, MITS (2024–2025).',
-    ],
-  },
-];
-
-export type Project = {
+export type Work = {
+  index: string;
   title: string;
   period: string;
+  result?: string;
   summary: string;
-  highlight: string;
-  accent: string;
-  icon: 'brain' | 'trending' | 'image' | 'chart';
-  features: string[];
-  tech: string[];
+  detail: string[];
+  stack: string[];
   link?: string;
-  featured?: boolean;
 };
 
-export const projects: Project[] = [
+export const work: Work[] = [
   {
+    index: '01',
     title: 'Multimodal Language Assistant',
-    period: 'Jan 2025 — Mar 2025',
+    period: 'Jan to Mar 2025',
+    result: '85% feedback relevance',
     summary:
-      'An AI practice partner that listens, transcribes and coaches — built on Whisper for speech and GROQ for low-latency generation, wrapped in a Gradio interface.',
-    highlight: '85% feedback relevance',
-    accent: 'from-indigo-400 via-violet-500 to-fuchsia-500',
-    icon: 'brain',
-    features: [
-      'Multimodal audio + text input pipeline',
-      'Whisper transcription with GROQ-hosted LLM feedback',
-      'Relevance validated through quantitative analysis',
-      'Interactive Gradio front-end for live practice',
+      'A practice partner for language learners. You speak, it transcribes, and it tells you what to fix.',
+    detail: [
+      'Whisper handles transcription, GROQ generates the feedback fast enough that the conversation does not stall.',
+      'Feedback relevance was checked against a scored sample rather than assumed.',
+      'Gradio front end so audio and text go through the same path.',
     ],
-    tech: ['Python', 'Whisper', 'GROQ API', 'Gradio', 'NLP'],
+    stack: ['Python', 'Whisper', 'GROQ API', 'Gradio'],
     link: 'https://github.com/Prafful1505/MultimodalLanguageLearningAssistant-',
-    featured: true,
   },
   {
-    title: 'Image-Based QA with RAG',
-    period: 'Dec 2024 — Jan 2025',
+    index: '02',
+    title: 'Image Based QA with RAG',
+    period: 'Dec 2024 to Jan 2025',
+    result: '80% answer accuracy',
     summary:
-      'A retrieval-augmented system that reads images with OCR, embeds the extracted text and answers questions grounded in what it actually saw.',
-    highlight: '80% answer accuracy',
-    accent: 'from-rose-400 via-pink-500 to-fuchsia-500',
-    icon: 'image',
-    features: [
-      'Tesseract OCR pipeline for text extraction',
-      'LangChain retrieval with MiniLM embeddings',
-      'Chunking and prompt tuning for grounded answers',
-      'EDA-driven retrieval optimisation',
+      'Ask a question about an image and get an answer grounded in the text the system actually read off it.',
+    detail: [
+      'Tesseract pulls the text, MiniLM embeddings index it, LangChain does the retrieval.',
+      'Most of the work was in chunking and prompt shape. Retrieval quality moved the result far more than the model choice did.',
+      'Accuracy measured on a fixed question set so changes were comparable.',
     ],
-    tech: ['Python', 'Tesseract OCR', 'LangChain', 'RAG', 'MiniLM'],
+    stack: ['Python', 'Tesseract OCR', 'LangChain', 'MiniLM'],
     link: 'https://github.com/Prafful1505/image_qa_rag',
   },
   {
-    title: 'Media & Entertainment Stock Dashboard',
-    period: 'Feb 2025 — Mar 2025',
+    index: '03',
+    title: 'Telecom Churn Analytics',
+    period: 'Oct to Nov 2024',
     summary:
-      'Power BI reporting over a star-schema model that tracks stock performance and KPIs across major media firms, refreshed by an automated ETL flow.',
-    highlight: 'Star-schema model',
-    accent: 'from-sky-400 via-blue-500 to-indigo-500',
-    icon: 'trending',
-    features: [
-      'Multi-source dataset integration into one model',
-      'DAX measures for moving averages, returns and ratios',
-      'Dynamic slicers for sector and company drill-down',
-      'Automated ETL for cleansing and transformation',
+      'Churn analysis at the customer level that ends in a dashboard a retention team can act on, not a notebook nobody opens.',
+    detail: [
+      'Churn drivers by segment in Python and SQL, tested rather than eyeballed.',
+      'Power BI dashboard built around the questions the team kept asking.',
+      'Recommendations tied to specific segments, with the size of each one attached.',
     ],
-    tech: ['Power BI', 'DAX', 'ETL', 'Excel'],
+    stack: ['Python', 'SQL', 'Power BI', 'Pandas'],
+    link: 'https://github.com/Prafful1505/telecom-churn',
   },
   {
-    title: 'Telecom Churn Analytics',
-    period: 'Oct 2024 — Nov 2024',
+    index: '04',
+    title: 'Media & Entertainment Stock Dashboard',
+    period: 'Feb to Mar 2025',
     summary:
-      'Customer-level churn analysis in Python and SQL, translated into a dashboard that points retention teams at the segments actually at risk.',
-    highlight: 'Retention insights',
-    accent: 'from-emerald-400 via-teal-500 to-cyan-500',
-    icon: 'chart',
-    features: [
-      'Churn driver analysis across customer segments',
-      'Interactive Power BI dashboard of churn trends',
-      'Statistical testing of behavioural patterns',
-      'Actionable recommendations for retention',
+      'Stock performance and KPIs for major media firms, on a star schema that survives new data sources being added.',
+    detail: [
+      'Several sources folded into one model instead of one report per source.',
+      'DAX measures for moving averages, returns and ratios.',
+      'Automated ETL for the cleaning, so a refresh is not a manual afternoon.',
     ],
-    tech: ['Python', 'SQL', 'Power BI', 'Pandas'],
-    link: 'https://github.com/Prafful1505/telecom-churn',
-    featured: true,
+    stack: ['Power BI', 'DAX', 'ETL', 'Excel'],
   },
 ];
 
-export const navLinks = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'contact', label: 'Contact' },
+export type Role = {
+  period: string;
+  title: string;
+  org: string;
+  note?: string;
+  points: string[];
+};
+
+export const roles: Role[] = [
+  {
+    period: '2026 to now',
+    title: 'Implementation Team Manager',
+    org: 'Target Dial',
+    note: 'Promoted from Forward Deployed Engineer, August 2026',
+    points: [
+      'Run implementation end to end: scoping, delivery planning, and the handover into production.',
+      'Set how agent and automation builds get put together, so the next deployment is not started from scratch.',
+      'Sit between clients and the engineers to keep business goals and technical work pointed the same way.',
+    ],
+  },
+  {
+    period: '2025 to 2026',
+    title: 'Forward Deployed Engineer, Prompt Engineer',
+    org: 'Target Dial',
+    points: [
+      'Built and deployed conversational AI agents with RetellAI, wired together with n8n and Make.com.',
+      'Wrote and iterated the prompts behind those agents, testing them against real call transcripts.',
+      'Connected several APIs into workflows that could be monitored instead of guessed at.',
+      'Used NLP on interaction data to find where the agents were losing people.',
+    ],
+  },
+  {
+    period: 'May to Jul 2025',
+    title: 'Data Scientist Intern',
+    org: 'Young Thames',
+    points: [
+      'Cleaned and analysed CRM and public datasets, then reported what was actually in them.',
+      'Automated the reporting that was being redone by hand every week.',
+      'Worked with stakeholders on what the dashboards needed to answer.',
+    ],
+  },
+  {
+    period: '2022 to 2026',
+    title: 'B.Tech, Artificial Intelligence & Data Science',
+    org: 'Madhav Institute of Technology and Science, Gwalior',
+    note: 'CGPA 7.5 / 10',
+    points: [
+      'Coursework across statistics, database systems, data visualisation and machine learning.',
+      'Management Head of the Science Club, 2024 to 2025.',
+    ],
+  },
+];
+
+export const certifications = [
+  { name: 'Oracle Cloud Infrastructure 2025 Foundations Associate', issuer: 'Oracle', year: '2025' },
+  { name: 'Data Analytics with Python', issuer: 'NPTEL', year: '2025' },
+];
+
+export const toolkit = [
+  {
+    label: 'Everyday',
+    items: ['Python', 'SQL', 'Pandas', 'NumPy', 'Power BI', 'Excel', 'Git'],
+  },
+  {
+    label: 'AI & ML',
+    items: [
+      'Prompt engineering',
+      'LangChain',
+      'RAG',
+      'Whisper',
+      'Tesseract OCR',
+      'RetellAI',
+      'Statistical analysis',
+    ],
+  },
+  {
+    label: 'Data & cloud',
+    items: ['MySQL', 'ETL pipelines', 'AWS', 'Oracle Cloud', 'Jupyter'],
+  },
+  {
+    label: 'Also written',
+    items: ['TypeScript', 'Java', 'n8n', 'Make.com'],
+  },
+];
+
+export const sections = [
+  { id: 'top', label: 'Intro', index: '00' },
+  { id: 'work', label: 'Work', index: '01' },
+  { id: 'experience', label: 'Experience', index: '02' },
+  { id: 'toolkit', label: 'Toolkit', index: '03' },
+  { id: 'contact', label: 'Contact', index: '04' },
 ];
