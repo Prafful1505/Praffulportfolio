@@ -66,8 +66,8 @@ const Intro = () => {
             <dd className="mt-1 font-mono tabular-nums">{time}</dd>
           </div>
           <div>
-            <dt className="label">Studying</dt>
-            <dd className="mt-1">B.Tech AI &amp; Data Science, till 2026</dd>
+            <dt className="label">Studied</dt>
+            <dd className="mt-1">B.Tech AI &amp; Data Science, MITS Gwalior, 2026</dd>
           </div>
           <div>
             <dt className="label">Status</dt>

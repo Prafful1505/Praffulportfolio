@@ -15,8 +15,8 @@ export const profile = {
 };
 
 export const intro = [
-  'I lead the implementation team at Target Dial. Most of my week goes into working out what a customer actually needs, writing the prompts and building the AI agents and data pipelines behind it, then staying with the work until it runs in production without me watching it.',
-  'Before this I was a forward deployed engineer on the same team, and before that an intern cleaning CRM exports and building Power BI reports. I finish a B.Tech in artificial intelligence and data science at MITS Gwalior in 2026.',
+  'I build and ship production AI systems at Target Dial. Autonomous voice and SMS agents on the Claude SDK and MCP, the prompt schemas and routing that keep them accurate, and the pipelines that connect them to the systems a business already runs on.',
+  'I lead the implementation team now, which means I stay with a build from the first scoping call through to the handover. Before Target Dial I was an intern at Young Thames LLP writing data pipelines and SQL. I graduated in artificial intelligence and data science from MITS Gwalior in 2026.',
 ];
 
 export type Work = {
@@ -39,11 +39,11 @@ export const work: Work[] = [
     summary:
       'A practice partner for language learners. You speak, it transcribes, and it tells you what to fix.',
     detail: [
-      'Whisper handles transcription, GROQ generates the feedback fast enough that the conversation does not stall.',
+      'FastAPI backend pipeline with Whisper for transcription and GROQ for generation, fast enough that the conversation does not stall.',
+      'JSON payload structures and context windows tuned so the multimodal replies come back structured rather than freeform.',
       'Feedback relevance was checked against a scored sample rather than assumed.',
-      'Gradio front end so audio and text go through the same path.',
     ],
-    stack: ['Python', 'Whisper', 'GROQ API', 'Gradio'],
+    stack: ['Python', 'FastAPI', 'Whisper', 'GROQ API'],
     link: 'https://github.com/Prafful1505/MultimodalLanguageLearningAssistant-',
   },
   {
@@ -68,11 +68,11 @@ export const work: Work[] = [
     summary:
       'Churn analysis at the customer level that ends in a dashboard a retention team can act on, not a notebook nobody opens.',
     detail: [
-      'Churn drivers by segment in Python and SQL, tested rather than eyeballed.',
-      'Power BI dashboard built around the questions the team kept asking.',
-      'Recommendations tied to specific segments, with the size of each one attached.',
+      'End to end exploratory analysis over large relational datasets in Python and SQL.',
+      'Complex queries and aggregations that reshape the tables for predictive modelling and trend work.',
+      'Churn drivers by segment, tested rather than eyeballed, with the size of each segment attached.',
     ],
-    stack: ['Python', 'SQL', 'Power BI', 'Pandas'],
+    stack: ['Python', 'SQL', 'Pandas', 'Power BI'],
     link: 'https://github.com/Prafful1505/telecom-churn',
   },
   {
@@ -100,10 +100,10 @@ export type Role = {
 
 export const roles: Role[] = [
   {
-    period: '2026 to now',
+    period: 'Aug 2026 to now',
     title: 'Implementation Team Manager',
     org: 'Target Dial',
-    note: 'Promoted from Forward Deployed Engineer, August 2026',
+    note: 'Promoted from Forward Deployed Engineer',
     points: [
       'Run implementation end to end: scoping, delivery planning, and the handover into production.',
       'Set how agent and automation builds get put together, so the next deployment is not started from scratch.',
@@ -111,24 +111,22 @@ export const roles: Role[] = [
     ],
   },
   {
-    period: '2025 to 2026',
-    title: 'Forward Deployed Engineer, Prompt Engineer',
+    period: 'Sep 2025 to Aug 2026',
+    title: 'Forward Deployed Engineer',
     org: 'Target Dial',
     points: [
-      'Built and deployed conversational AI agents with RetellAI, wired together with n8n and Make.com.',
-      'Wrote and iterated the prompts behind those agents, testing them against real call transcripts.',
-      'Connected several APIs into workflows that could be monitored instead of guessed at.',
-      'Used NLP on interaction data to find where the agents were losing people.',
+      'Built production autonomous voice and SMS agents on the Claude SDK and MCP to handle enterprise lead qualification.',
+      'Designed the prompt engineering schemas and routing that let an agent hold live context from several client sources at once, taking response accuracy to 92%.',
+      'Wired LLM orchestration into Salesforce and GoHighLevel over REST, which replaced manual tracking and saved more than 15 hours a week.',
     ],
   },
   {
-    period: 'May to Jul 2025',
+    period: 'May to Aug 2025',
     title: 'Data Scientist Intern',
-    org: 'Young Thames',
+    org: 'Young Thames LLP',
     points: [
-      'Cleaned and analysed CRM and public datasets, then reported what was actually in them.',
-      'Automated the reporting that was being redone by hand every week.',
-      'Worked with stakeholders on what the dashboards needed to answer.',
+      'Built automated pipelines for structured and unstructured relational data, cutting reporting turnaround by 30%.',
+      'Validated and optimised the SQL behind cross functional dashboards so the numbers held up.',
     ],
   },
   {
@@ -144,34 +142,46 @@ export const roles: Role[] = [
 ];
 
 export const certifications = [
-  { name: 'Oracle Cloud Infrastructure 2025 Foundations Associate', issuer: 'Oracle', year: '2025' },
-  { name: 'Data Analytics with Python', issuer: 'NPTEL', year: '2025' },
+  {
+    name: 'Oracle Cloud Infrastructure 2025 Foundations Associate',
+    issuer: 'Oracle',
+    year: 'September 2025',
+  },
 ];
 
 export const toolkit = [
   {
-    label: 'Everyday',
-    items: ['Python', 'SQL', 'Pandas', 'NumPy', 'Power BI', 'Excel', 'Git'],
-  },
-  {
     label: 'AI & ML',
     items: [
+      'Large language models',
       'Prompt engineering',
-      'LangChain',
       'RAG',
-      'Whisper',
-      'Tesseract OCR',
-      'RetellAI',
-      'Statistical analysis',
+      'Claude SDK',
+      'MCP',
+      'LangChain',
+      'Machine learning',
     ],
   },
   {
-    label: 'Data & cloud',
-    items: ['MySQL', 'ETL pipelines', 'AWS', 'Oracle Cloud', 'Jupyter'],
+    label: 'Technical',
+    items: [
+      'Python (Pandas, NumPy, Scikit-Learn)',
+      'SQL',
+      'FastAPI',
+      'REST APIs',
+      'JSON',
+      'Git',
+      'n8n',
+      'Unix/Linux',
+    ],
   },
   {
-    label: 'Also written',
-    items: ['TypeScript', 'Java', 'n8n', 'Make.com'],
+    label: 'Cloud & data',
+    items: ['AWS (S3, EC2, Lambda)', 'Oracle Cloud Infrastructure', 'MySQL', 'ETL pipelines', 'Power BI'],
+  },
+  {
+    label: 'How I work',
+    items: ['Analytical thinking', 'System architecture', 'Technical documentation', 'Problem solving'],
   },
 ];
 
