@@ -3,7 +3,7 @@ import Section from './Section';
 
 const Toolkit = () => (
   <Section id="toolkit" index="03" title="What I work with">
-    <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+    <div className="grid gap-x-12 gap-y-8 lg:grid-cols-2">
       {toolkit.map((group) => (
         <div key={group.label} className="reveal grid gap-2 sm:grid-cols-[7rem_1fr] sm:gap-6">
           <p className="label pt-1">{group.label}</p>

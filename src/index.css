@@ -65,7 +65,18 @@
 
 @layer components {
   .page {
-    @apply mx-auto w-full max-w-page px-6 sm:px-8;
+    @apply mx-auto w-full max-w-page px-5 sm:px-8;
+  }
+
+  /* Very large displays: widen the column and lift the base size a little,
+     rather than stranding a narrow strip in the middle of the screen. */
+  @media (min-width: 1600px) {
+    .page {
+      max-width: 72rem;
+    }
+    body {
+      font-size: 17px;
+    }
   }
 
   /* Small uppercase mono label used for section numbers, dates, meta */

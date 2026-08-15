@@ -40,7 +40,10 @@ const Intro = () => {
             <a href={`mailto:${profile.email}`} className="a">
               {profile.email}
             </a>
-            <button onClick={copyEmail} className="font-mono text-2xs text-muted transition-colors hover:text-ink">
+            <button
+              onClick={copyEmail}
+              className="-m-2 p-2 font-mono text-2xs text-muted transition-colors hover:text-ink"
+            >
               {copied ? 'copied' : 'copy'}
             </button>
             <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="a">

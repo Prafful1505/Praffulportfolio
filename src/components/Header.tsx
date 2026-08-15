@@ -54,14 +54,14 @@ const Header = ({ onOpenMenu, active }: Props) => {
           <button
             onClick={toggle}
             aria-label={theme === 'dark' ? 'Use light theme' : 'Use dark theme'}
-            className="rounded border border-rule px-2 py-1 font-mono text-2xs text-muted transition-colors hover:text-ink"
+            className="rounded border border-rule px-2.5 py-1.5 font-mono text-2xs text-muted transition-colors hover:text-ink"
           >
             {theme === 'dark' ? 'light' : 'dark'}
           </button>
 
           <button
             onClick={onOpenMenu}
-            className="flex items-center gap-2 rounded border border-rule px-2.5 py-1 text-2xs text-muted transition-colors hover:text-ink"
+            className="flex items-center gap-2 rounded border border-rule px-2.5 py-1.5 text-2xs text-muted transition-colors hover:text-ink"
           >
             <span className="font-mono">menu</span>
             <span className="key hidden sm:inline">⌘K</span>
