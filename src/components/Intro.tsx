@@ -70,11 +70,15 @@ const Intro = () => {
             <dd className="mt-1">B.Tech AI &amp; Data Science, MITS Gwalior, 2026</dd>
           </div>
           <div>
-            <dt className="label">Status</dt>
-            <dd className="mt-1 flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Open to conversations
+            <dt className="label">Available for</dt>
+            <dd className="mt-1 flex items-start gap-2">
+              <span className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              <span>Contract work and full time roles</span>
             </dd>
+          </div>
+          <div>
+            <dt className="label">Working</dt>
+            <dd className="mt-1">Remote, across time zones</dd>
           </div>
         </dl>
       </div>

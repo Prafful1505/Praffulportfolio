@@ -15,8 +15,9 @@ export const profile = {
 };
 
 export const intro = [
-  'I build and ship production AI systems at Target Dial. Autonomous voice and SMS agents on the Claude SDK and MCP, the prompt schemas and routing that keep them accurate, and the pipelines that connect them to the systems a business already runs on.',
-  'I lead the implementation team now, which means I stay with a build from the first scoping call through to the handover. Before Target Dial I was an intern at Young Thames LLP writing data pipelines and SQL. I graduated in artificial intelligence and data science from MITS Gwalior in 2026.',
+  'I build and ship production AI systems on contract. Autonomous voice and SMS agents on the Claude SDK and MCP, the prompt schemas and routing that keep them accurate, and the pipelines that connect them to the systems a business already runs on.',
+  'Most of that work has been for Target Dial, where I now lead the implementation team, which means I stay with a build from the first scoping call through to the handover. Before that I interned at Young Thames LLP writing data pipelines and SQL. I graduated in artificial intelligence and data science from MITS Gwalior in 2026.',
+  'I take on both contract engagements and full time roles. If you have something that needs building properly, I am worth a conversation.',
 ];
 
 export type Work = {
@@ -103,7 +104,7 @@ export const roles: Role[] = [
     period: 'Aug 2026 to now',
     title: 'Implementation Team Manager',
     org: 'Target Dial',
-    note: 'Promoted from Forward Deployed Engineer',
+    note: 'Contract, stepped up from Forward Deployed Engineer',
     points: [
       'Run implementation end to end: scoping, delivery planning, and the handover into production.',
       'Set how agent and automation builds get put together, so the next deployment is not started from scratch.',
@@ -114,6 +115,7 @@ export const roles: Role[] = [
     period: 'Sep 2025 to Aug 2026',
     title: 'Forward Deployed Engineer',
     org: 'Target Dial',
+    note: 'Contract',
     points: [
       'Built production autonomous voice and SMS agents on the Claude SDK and MCP to handle enterprise lead qualification.',
       'Designed the prompt engineering schemas and routing that let an agent hold live context from several client sources at once, taking response accuracy to 92%.',
@@ -124,6 +126,7 @@ export const roles: Role[] = [
     period: 'May to Aug 2025',
     title: 'Data Scientist Intern',
     org: 'Young Thames LLP',
+    note: 'Internship',
     points: [
       'Built automated pipelines for structured and unstructured relational data, cutting reporting turnaround by 30%.',
       'Validated and optimised the SQL behind cross functional dashboards so the numbers held up.',

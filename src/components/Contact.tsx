@@ -28,12 +28,17 @@ const Contact = () => {
       <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
         <div className="prose-measure space-y-5">
           <p>
-            If you are hiring for data, AI or delivery work, or you have a problem you think I would find
-            interesting, write to me. I read everything and I reply.
+            Two ways this usually starts. You have a build in mind, an agent, a pipeline, a dashboard that
+            has to be right, and you want someone to take it on. Or you are hiring for AI and data work and
+            want to talk about a role.
           </p>
           <p>
-            I am in {profile.location}, and I work with teams elsewhere without much trouble. Most of my
-            week already runs across time zones.
+            Either is welcome. Tell me what the problem is and what good would look like, and I will tell
+            you honestly whether I am the right person for it.
+          </p>
+          <p>
+            I am in {profile.location} and work remotely without much trouble. Most of my week already runs
+            across time zones.
           </p>
         </div>
 
