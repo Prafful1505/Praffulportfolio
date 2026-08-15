@@ -1,97 +1,150 @@
-import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowUpRight, Check, Copy, Linkedin, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import SectionHeading from './SectionHeading';
+import { profile } from '../data/site';
+
+const channels = [
+  {
+    label: 'Email',
+    value: profile.email,
+    href: `mailto:${profile.email}`,
+    Icon: Mail,
+    accent: 'from-brand-300 to-brand-600',
+    copyable: true,
+  },
+  {
+    label: 'Phone',
+    value: profile.phone,
+    href: profile.phoneHref,
+    Icon: Phone,
+    accent: 'from-sky-300 to-blue-600',
+    copyable: true,
+  },
+  {
+    label: 'WhatsApp',
+    value: 'Start a chat',
+    href: profile.whatsapp,
+    Icon: MessageCircle,
+    accent: 'from-emerald-300 to-green-600',
+    copyable: false,
+  },
+  {
+    label: 'LinkedIn',
+    value: 'Connect with me',
+    href: profile.linkedin,
+    Icon: Linkedin,
+    accent: 'from-violet-400 to-indigo-600',
+    copyable: false,
+  },
+];
 
 const Contact = () => {
+  const [copied, setCopied] = useState<string | null>(null);
+
+  const copy = async (value: string) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(value);
+      window.setTimeout(() => setCopied(null), 1800);
+    } catch {
+      /* clipboard unavailable — the link still works */
+    }
+  };
+
   return (
-    <section id="contact" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-12">
-          
-          {/* Contact Info */}
-          <div className="lg:w-1/2 flex flex-col justify-center">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 mb-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-gray-300 text-sm">Email</p>
-                    <a 
-                      href="mailto:aprafful15@gmail.com"
-                      className="text-white font-medium hover:text-teal-400 transition-colors"
-                    >
-                      aprafful15@gmail.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-gray-300 text-sm">Phone</p>
-                    <a 
-                      href="tel:+917879059862"
-                      className="text-white font-medium hover:text-teal-400 transition-colors"
-                    >
-                      +91 7879059862
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
-                    <img 
-                      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-                      alt="WhatsApp"
-                      className="w-6 h-6"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-gray-300 text-sm">WhatsApp</p>
-                    <a 
-                      href="https://wa.me/917879059862?text=Hi%20Prafful%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect!"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white font-medium hover:text-teal-400 transition-colors"
-                    >
-                      Chat on WhatsApp
-                    </a>
-                  </div>
-                </div>
+    <section id="contact" className="section pb-28">
+      <div className="shell">
+        <SectionHeading
+          eyebrow="Get in touch"
+          title={
+            <>
+              Let's build something <span className="text-gradient">worth measuring</span>
+            </>
+          }
+          description="Hiring, collaborating, or just want to compare notes on data and AI? My inbox is genuinely open."
+        />
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-gray-300 text-sm">Location</p>
-                    <p className="text-white font-medium">Gwalior, India</p>
-                  </div>
-                </div>
+        <div className="reveal glass relative overflow-hidden p-6 sm:p-10">
+          <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-brand-500/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-28 -right-16 h-64 w-64 rounded-full bg-violet-500/20 blur-3xl" />
+
+          <div className="relative grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-brand-400/25 bg-brand-400/10 px-4 py-1.5 text-xs font-medium text-brand-200">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-brand-400" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-300" />
+                </span>
+                {profile.availability}
               </div>
+
+              <h3 className="mt-5 font-display text-2xl font-bold leading-tight text-white sm:text-3xl">
+                Ready when you are.
+              </h3>
+              <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-400 sm:text-base">
+                {profile.summary}
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a href={`mailto:${profile.email}`} className="btn btn-primary">
+                  <Mail size={16} />
+                  Email me
+                </a>
+                <a
+                  href={profile.resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-ghost"
+                >
+                  View resume
+                  <ArrowUpRight size={16} />
+                </a>
+              </div>
+
+              <p className="mt-6 flex items-center gap-2 text-sm text-slate-500">
+                <MapPin size={15} className="text-brand-300" />
+                Based in {profile.location} — open to remote and relocation.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {channels.map(({ label, value, href, Icon, accent, copyable }) => (
+                <div
+                  key={label}
+                  className="group relative rounded-2xl border border-white/[0.07] bg-white/[0.03] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-brand-400/30 hover:bg-white/[0.06]"
+                >
+                  <a
+                    href={href}
+                    target={href.startsWith('http') ? '_blank' : undefined}
+                    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="flex items-center gap-3"
+                  >
+                    <span
+                      className={`grid h-11 w-11 flex-shrink-0 place-items-center rounded-xl bg-gradient-to-br ${accent} text-white shadow-lg transition-transform duration-500 group-hover:scale-110`}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-[11px] uppercase tracking-[0.14em] text-slate-500">
+                        {label}
+                      </span>
+                      <span className="block truncate text-sm font-medium text-white">{value}</span>
+                    </span>
+                  </a>
+
+                  {copyable && (
+                    <button
+                      onClick={() => copy(value)}
+                      aria-label={`Copy ${label}`}
+                      className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-lg border border-white/[0.07] bg-ink-900/70 text-slate-400 opacity-0 transition-all duration-300 hover:text-brand-200 focus-visible:opacity-100 group-hover:opacity-100"
+                    >
+                      {copied === value ? <Check size={14} className="text-brand-300" /> : <Copy size={14} />}
+                    </button>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* Illustration */}
-          <div className="hidden lg:flex justify-center items-center lg:w-1/2">
-            <div className="relative">
-              <div className="w-80 h-60 bg-gradient-to-br from-teal-400/20 to-blue-400/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Mail className="w-10 h-10 text-white" />
-                  </div>
-                  <p className="text-white font-medium">Ready to collaborate?</p>
-                  <p className="text-gray-300 text-sm">Let's create something amazing together</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>

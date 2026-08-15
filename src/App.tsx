@@ -1,24 +1,31 @@
-import React, { useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink, Calendar, Award } from 'lucide-react';
+import Background from './components/Background';
+import ScrollProgress from './components/ScrollProgress';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
+import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { useReveal } from './hooks/useReveal';
 
 function App() {
-  const characterRef = useRef<HTMLDivElement>(null);
+  useReveal();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-slate-800">
+    <div className="relative min-h-screen font-sans antialiased">
+      <Background />
+      <ScrollProgress />
       <Navigation />
-      <Hero characterRef={characterRef} />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

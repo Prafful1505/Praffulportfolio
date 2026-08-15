@@ -1,73 +1,54 @@
-import React from 'react';
-import { BarChart3, Database, TrendingUp, Brain } from 'lucide-react';
+import { BarChart3, Brain, Cloud, Code2, Check } from 'lucide-react';
+import SectionHeading from './SectionHeading';
+import { skillGroups } from '../data/site';
 
-const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Analytics",
-      icon: <BarChart3 className="w-8 h-8" />,
-      skills: ["Data Analysis", "Data Cleaning", "Visualization", "Business Intelligence"],
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      title: "Languages",
-      icon: <Database className="w-8 h-8" />,
-      skills: ["SQL", "Python (Pandas, NumPy)", "TypeScript", "Java"],
-      color: "from-green-500 to-green-600"
-    },
-    {
-      title: "Cloud & Tools",
-      icon: <TrendingUp className="w-8 h-8" />,
-      skills: ["AWS", "Power BI", "Excel", "MySQL", "Jupyter", "Git"],
-      color: "from-purple-500 to-purple-600"
-    },
-    {
-      title: "AI & ML",
-      icon: <Brain className="w-8 h-8" />,
-      skills: ["Machine Learning", "RAG", "LangChain", "OCR", "Statistical Analysis"],
-      color: "from-teal-500 to-teal-600"
-    }
-  ];
+const icons = [BarChart3, Code2, Brain, Cloud];
 
-  return (
-    <section id="skills" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Skills & Expertise</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Comprehensive skill set in data analytics, statistical methods, and modern business intelligence tools
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {skillCategories.map((category, index) => (
-            <div 
-              key={index}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+const Skills = () => (
+  <section id="skills" className="section">
+    <div className="shell">
+      <SectionHeading
+        eyebrow="What I work with"
+        title={
+          <>
+            A toolkit built around <span className="text-gradient">shipping insight</span>
+          </>
+        }
+        description="Four areas I keep sharp — from cleaning the first CSV to putting an AI workflow in front of real users."
+      />
+
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {skillGroups.map((group, index) => {
+          const Icon = icons[index % icons.length];
+          return (
+            <article
+              key={group.title}
+              className="reveal glass glass-hover group flex flex-col p-6"
+              style={{ ['--reveal-delay' as string]: `${index * 90}ms` }}
             >
-              <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center mb-4 text-white shadow-lg`}>
-                {category.icon}
+              <div
+                className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${group.accent} text-white shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}
+              >
+                <Icon className="h-6 w-6" />
               </div>
-              
-              <h3 className="text-xl font-semibold text-white mb-4">{category.title}</h3>
-              
-              <div className="space-y-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <div 
-                    key={skillIndex}
-                    className="flex items-center gap-2 text-gray-300"
-                  >
-                    <div className="w-2 h-2 bg-teal-400 rounded-full"></div>
-                    <span className="text-sm">{skill}</span>
-                  </div>
+
+              <h3 className="mt-5 font-display text-lg font-semibold text-white">{group.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">{group.blurb}</p>
+
+              <ul className="mt-5 space-y-2.5 border-t border-white/[0.06] pt-5">
+                {group.skills.map((skill) => (
+                  <li key={skill} className="flex items-start gap-2.5 text-sm text-slate-300">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-300" />
+                    <span>{skill}</span>
+                  </li>
                 ))}
-              </div>
-            </div>
-          ))}
-        </div>
+              </ul>
+            </article>
+          );
+        })}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Skills;
